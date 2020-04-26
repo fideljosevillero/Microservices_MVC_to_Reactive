@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
-public class UserController {
+@RequestMapping("/account")
+public class AccountComntroller {
 
-	@GetMapping("/index")
-	public String index() {
-		return "Fine!!!";
+	@GetMapping("/status/check")
+	public String status() {
+		return "Service Up and Working!";
 	}
+	
 	
 }
