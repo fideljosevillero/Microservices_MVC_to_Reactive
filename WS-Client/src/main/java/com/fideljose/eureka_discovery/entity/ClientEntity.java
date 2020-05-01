@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.databind.ser.std.SerializableSerializer;
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="Client")
@@ -17,27 +16,27 @@ public class ClientEntity extends SerializableSerializer {
 	
 	@Id
 	@GeneratedValue
-	private String id;
+	private Long id;
 	
-	@Column(nullable=false, length=50, unique=true)
-	private String idClientDB;
+//	@Column(nullable=false, length=50, unique=true)
+//	private String idClientDB;
 	
 	@Column(nullable=false, length=50)
 	private String firstName;
 	
-	@Column(nullable=false, length=50)
-	private String lastName;
+//	@Column(nullable=false, length=50)
+//	private String lastName;
+//	
+//	@Column(nullable=false, length=50)
+//	private String address;
+//	
+//	@Column(nullable=false, length=50, unique=true)
+//	private String passwordEncrypted;
 	
-	@Column(nullable=false, length=50)
-	private String address;
-	
-	@Column(nullable=false, length=50, unique=true)
-	private String passwordEncrypted;
-	
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFirstName() {
@@ -46,24 +45,24 @@ public class ClientEntity extends SerializableSerializer {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getPasswordEncrypted() {
-		return passwordEncrypted;
-	}
-	public void setPasswordEncrypted(String passwordEncrypted) {
-		this.passwordEncrypted = passwordEncrypted;
-	}
+//	public String getLastName() {
+//		return lastName;
+//	}
+//	public void setLastName(String lastName) {
+//		this.lastName = lastName;
+//	}
+//	public String getAddress() {
+//		return address;
+//	}
+//	public void setAddress(String address) {
+//		this.address = address;
+//	}
+//	public String getPasswordEncrypted() {
+//		return passwordEncrypted;
+//	}
+//	public void setPasswordEncrypted(String passwordEncrypted) {
+//		this.passwordEncrypted = passwordEncrypted;
+//	}
 	
 	
 	

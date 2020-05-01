@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fideljose.eureka_discovery.dto.ClientDto;
-import com.fideljose.eureka_discovery.service.IClientService;
+//import com.fideljose.eureka_discovery.dto.ClientDto;
+//import com.fideljose.eureka_discovery.service.IClientService;
 import com.sun.jersey.api.client.ClientResponse.Status;
 
 @RestController
 @RequestMapping("/client")
 public class ClientController {
 
-	@Autowired
-	IClientService iClientService;
+//	@Autowired
+//	IClientService iClientService;
 	
 	@Autowired
 	private Environment env;
@@ -32,11 +32,11 @@ public class ClientController {
 				+ env.getProperty("local.server.port");
 	}
 	
-	@PostMapping("/save-client")
-	public ResponseEntity<ClientDto> saveClient(@Valid @RequestBody ClientDto clientDto){
-		ClientDto cl = iClientService.save(clientDto);
-		return new ResponseEntity<ClientDto>(cl, HttpStatus.CREATED);
-	}
+//	@PostMapping("/save-client")
+//	public ResponseEntity<ClientDto> saveClient(@Valid @RequestBody ClientDto clientDto){
+////		ClientDto cl = iClientService.save(clientDto);
+//		return new ResponseEntity<ClientDto>(new ClientDto(), HttpStatus.CREATED);
+//	}
 
 	
 }
