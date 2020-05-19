@@ -14,4 +14,9 @@ public class WsClientApplication {
 		SpringApplication.run(WsClientApplication.class, args);
 	}
 	
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder(); 
+	}
+	
 }

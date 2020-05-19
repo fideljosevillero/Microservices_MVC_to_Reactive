@@ -13,16 +13,21 @@ import com.fideljose.eureka_discovery.repository.IClientRepository;
 
 @Service
 public class ClientService implements IClientService {
-
-	private ModelMapper modelMapper = new ModelMapper();
 	
 	@Autowired
 	IClientRepository iClientRepository;
+	
+	private ModelMapper modelMapper = new ModelMapper();
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	public ClientService(BCryptPasswordEncoder bCryptPasswordEncoder) {
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+	}
 
 	@Override
 	public ClientDto save(ClientDto clientDto) {
 		ClientEntity c = new ClientEntity();
-		c.setPasswordEncrypted("asdfg");
+		c.setPasswordEncrypted(bCryptPasswordEncoder.encode("passwordToByCrypter"));
 		c.setId(clientDto.getId());
 		c.setIdClientDB("iohuiggoipiuhi1221");
 		c.setAddress(clientDto.getAddress());
