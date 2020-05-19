@@ -34,13 +34,10 @@ dependencies {
 	}
 	
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
-	compile group: 'org.modelmapper', name: 'modelmapper'
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
+	// https://mvnrepository.com/artifact/org.modelmapper.extensions/modelmapper-spring
+	compile group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '2.3.7'
 	
-	
-	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
-	// https://mvnrepository.com/artifact/com.mysql/management
-	//testCompile group: 'com.mysql', name: 'management', version: '1.1.6'
 	
 }
 

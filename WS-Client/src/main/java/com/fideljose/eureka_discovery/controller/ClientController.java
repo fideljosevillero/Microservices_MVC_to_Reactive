@@ -2,6 +2,7 @@ package com.fideljose.eureka_discovery.controller;
 
 import javax.validation.Valid;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,7 @@ public class ClientController {
 
 	@Autowired
     ClientService clientService;
+	private ModelMapper modelMapper = new ModelMapper();
 	
 	@Autowired
 	private Environment env;
@@ -36,18 +38,16 @@ public class ClientController {
 	@PostMapping("/save-client")
 	public ResponseEntity<ClientDto> saveClient(@Valid @RequestBody ClientDto clientDto){
 		ClientEntity c = new ClientEntity();
-		c.setId(Long.parseLong(clientDto.getId()));
+		c.setId(clientDto.getId());
 		c.setIdClientDB("iohuiggoipiuhi122");
 		c.setAddress(clientDto.getAddress());
 		c.setFirstName(clientDto.getFirstName());
 		c.setLastName(clientDto.getLastName());
 		c.setPasswordEncrypted("passwordEncrypted1");
 		ClientEntity cl = clientService.save(c);
-		ClientDto cdto = new ClientDto();
-		cdto.setId(cl.getId().toString());
-		cdto.setFirstName(cl.getFirstName());
-		cdto.setLastName(cl.getLastName());
-		cdto.setAddress(cl.getAddress());
+
+		ClientDto cdto = modelMapper.map(cl, ClientDto.class);
+
 		return new ResponseEntity<ClientDto>(cdto, HttpStatus.CREATED);
 	}
 
