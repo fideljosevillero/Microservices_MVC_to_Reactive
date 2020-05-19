@@ -33,10 +33,14 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	
-	//testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
 	compile group: 'org.modelmapper', name: 'modelmapper'
-	compile group: 'mysql', name: 'mysql-connector-java'
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
+	
+	
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	// https://mvnrepository.com/artifact/com.mysql/management
+	//testCompile group: 'com.mysql', name: 'management', version: '1.1.6'
 	
 }
 

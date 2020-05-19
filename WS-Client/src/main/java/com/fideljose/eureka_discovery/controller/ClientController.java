@@ -12,16 +12,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//import com.fideljose.eureka_discovery.dto.ClientDto;
-//import com.fideljose.eureka_discovery.service.IClientService;
-import com.sun.jersey.api.client.ClientResponse.Status;
+import com.fideljose.eureka_discovery.dto.ClientDto;
+import com.fideljose.eureka_discovery.entity.ClientEntity;
+import com.fideljose.eureka_discovery.service.ClientService;
 
+//http://192.168.1.7:50811/client/status/check
 @RestController
 @RequestMapping("/client")
 public class ClientController {
 
-//	@Autowired
-//	IClientService iClientService;
+	@Autowired
+    ClientService clientService;
 	
 	@Autowired
 	private Environment env;
@@ -32,11 +33,23 @@ public class ClientController {
 				+ env.getProperty("local.server.port");
 	}
 	
-//	@PostMapping("/save-client")
-//	public ResponseEntity<ClientDto> saveClient(@Valid @RequestBody ClientDto clientDto){
-////		ClientDto cl = iClientService.save(clientDto);
-//		return new ResponseEntity<ClientDto>(new ClientDto(), HttpStatus.CREATED);
-//	}
+	@PostMapping("/save-client")
+	public ResponseEntity<ClientDto> saveClient(@Valid @RequestBody ClientDto clientDto){
+		ClientEntity c = new ClientEntity();
+		c.setId(Long.parseLong(clientDto.getId()));
+		c.setIdClientDB("iohuiggoipiuhi122");
+		c.setAddress(clientDto.getAddress());
+		c.setFirstName(clientDto.getFirstName());
+		c.setLastName(clientDto.getLastName());
+		c.setPasswordEncrypted("passwordEncrypted1");
+		ClientEntity cl = clientService.save(c);
+		ClientDto cdto = new ClientDto();
+		cdto.setId(cl.getId().toString());
+		cdto.setFirstName(cl.getFirstName());
+		cdto.setLastName(cl.getLastName());
+		cdto.setAddress(cl.getAddress());
+		return new ResponseEntity<ClientDto>(cdto, HttpStatus.CREATED);
+	}
 
 	
 }

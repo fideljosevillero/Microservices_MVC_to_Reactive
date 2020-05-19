@@ -1,10 +1,10 @@
 package com.fideljose.eureka_discovery.service;
 
 
-import com.fideljose.eureka_discovery.dto.ClientDto;
+import com.fideljose.eureka_discovery.entity.ClientEntity;
 
 public interface IClientService {
 
-	ClientDto save(ClientDto clientDto);
+	ClientEntity save(ClientEntity clientEntity);
 	
 }
