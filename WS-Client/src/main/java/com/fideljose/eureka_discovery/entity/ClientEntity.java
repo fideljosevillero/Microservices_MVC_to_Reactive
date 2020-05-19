@@ -37,7 +37,7 @@ public class ClientEntity extends SerializableSerializer {
 	@Column(nullable=false, length=50)
 	private String address;
 	
-	@Column(nullable=false, length=50, unique=false)
+	@Column(nullable=false, length=400, unique=false)
 	private String passwordEncrypted;
 	
 	public Long getId() {

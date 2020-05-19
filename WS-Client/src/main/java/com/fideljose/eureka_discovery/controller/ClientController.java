@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,7 +27,6 @@ public class ClientController {
 
 	@Autowired
     ClientService clientService;
-	private ModelMapper modelMapper = new ModelMapper();
 	
 	@Autowired
 	private Environment env;
@@ -39,19 +39,7 @@ public class ClientController {
 	
 	@PostMapping("/save-client")
 	public ResponseEntity<ClientDto> saveClient(@Valid @RequestBody ClientDto clientDto){
-		ClientEntity c = new ClientEntity();
-		c.setId(clientDto.getId());
-		c.setIdClientDB("iohuiggoipiuhi122");
-		c.setAddress(clientDto.getAddress());
-		c.setFirstName(clientDto.getFirstName());
-		c.setLastName(clientDto.getLastName());
-		c.setPasswordEncrypted("passwordEncrypted1");
-		ClientEntity cl = clientService.save(c);
-
-		modelMapper.getConfiguration()
-		  .setMatchingStrategy(MatchingStrategies.STRICT);
-		ClientDto cdto = modelMapper.map(cl, ClientDto.class);
-
+		ClientDto cdto = clientService.save(clientDto);
 		return new ResponseEntity<ClientDto>(cdto, HttpStatus.CREATED);
 	}
 
