@@ -35,8 +35,8 @@ dependencies {
 	
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
-	// https://mvnrepository.com/artifact/org.modelmapper.extensions/modelmapper-spring
 	compile group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '2.3.7'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
 	
 	
 }

@@ -19,6 +19,7 @@ import com.fideljose.eureka_discovery.entity.ClientEntity;
 import com.fideljose.eureka_discovery.service.ClientService;
 
 //http://192.168.1.7:50811/client/status/check
+//http://laptop-co51gmud:[PORT-ZULLGATEWAY]/ws-client/client/status/check
 @RestController
 @RequestMapping("/client")
 public class ClientController {
