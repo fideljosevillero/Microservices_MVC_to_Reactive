@@ -3,6 +3,7 @@ package com.fideljose.eureka_discovery.controller;
 import javax.validation.Valid;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -46,6 +47,8 @@ public class ClientController {
 		c.setPasswordEncrypted("passwordEncrypted1");
 		ClientEntity cl = clientService.save(c);
 
+		modelMapper.getConfiguration()
+		  .setMatchingStrategy(MatchingStrategies.STRICT);
 		ClientDto cdto = modelMapper.map(cl, ClientDto.class);
 
 		return new ResponseEntity<ClientDto>(cdto, HttpStatus.CREATED);
