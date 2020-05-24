@@ -9,8 +9,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.databind.ser.std.SerializableSerializer;
 
+import lombok.Data;
+
 @Entity
 @Table(name="Client")
+@Data
 public class ClientEntity extends SerializableSerializer {
 
 	private static final long serialVersionUID = 1L;
@@ -40,35 +43,35 @@ public class ClientEntity extends SerializableSerializer {
 	@Column(nullable=false, length=400, unique=false)
 	private String passwordEncrypted;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getPasswordEncrypted() {
-		return passwordEncrypted;
-	}
-	public void setPasswordEncrypted(String passwordEncrypted) {
-		this.passwordEncrypted = passwordEncrypted;
-	}
+//	public Long getId() {
+//		return id;
+//	}
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
+//	public String getFirstName() {
+//		return firstName;
+//	}
+//	public void setFirstName(String firstName) {
+//		this.firstName = firstName;
+//	}
+//	public String getLastName() {
+//		return lastName;
+//	}
+//	public void setLastName(String lastName) {
+//		this.lastName = lastName;
+//	}
+//	public String getAddress() {
+//		return address;
+//	}
+//	public void setAddress(String address) {
+//		this.address = address;
+//	}
+//	public String getPasswordEncrypted() {
+//		return passwordEncrypted;
+//	}
+//	public void setPasswordEncrypted(String passwordEncrypted) {
+//		this.passwordEncrypted = passwordEncrypted;
+//	}
 	
 }

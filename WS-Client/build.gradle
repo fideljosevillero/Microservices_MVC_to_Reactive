@@ -38,7 +38,11 @@ dependencies {
 	compile group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '2.3.7'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
 	
-	
+	//Lombok
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'	
+	testCompileOnly 'org.projectlombok:lombok:1.18.12'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'	
 }
 
 dependencyManagement {
