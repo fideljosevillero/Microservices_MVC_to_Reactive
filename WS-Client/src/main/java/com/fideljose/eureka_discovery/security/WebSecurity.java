@@ -8,11 +8,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
-
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/client/**").permitAll();
+		http.authorizeRequests().antMatchers("/**").hasIpAddress("192.168.1.6");
+		http.headers().frameOptions().disable();
 	}
+	
 	
 }
