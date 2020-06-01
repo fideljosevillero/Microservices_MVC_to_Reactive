@@ -8,5 +8,6 @@ import com.fideljose.eureka_discovery.entity.ClientEntity;
 
 @Repository
 public interface IClientRepository extends CrudRepository<ClientEntity, Long> {
-	
+
+	ClientEntity findByEmail(String email);
 }

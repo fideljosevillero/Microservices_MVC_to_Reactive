@@ -37,6 +37,9 @@ dependencies {
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
 	compile group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '2.3.7'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	
 	
 	//Lombok
 	compileOnly 'org.projectlombok:lombok:1.18.12'

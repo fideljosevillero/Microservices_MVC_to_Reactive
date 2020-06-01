@@ -1,10 +1,12 @@
 package com.fideljose.eureka_discovery.service;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 import com.fideljose.eureka_discovery.dto.ClientDto;
 
-public interface IClientService {
+public interface IClientService extends UserDetailsService {
 
-//	ClientEntity save(ClientEntity clientEntity);
 	ClientDto save(ClientDto clientDto);
+	ClientDto getUserDetailsByEmail(String email);
 	
 }

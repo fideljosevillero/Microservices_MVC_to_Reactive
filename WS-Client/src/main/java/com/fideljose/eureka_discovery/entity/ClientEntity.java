@@ -24,13 +24,7 @@ public class ClientEntity extends SerializableSerializer {
 	
 	@Column(nullable=false, length=50, unique=false)
 	private String idClientDB;
-	
-	public String getIdClientDB() {
-		return idClientDB;
-	}
-	public void setIdClientDB(String idClientDB) {
-		this.idClientDB = idClientDB;
-	}
+
 	@Column(nullable=false, length=50)
 	private String firstName;
 	
@@ -43,35 +37,6 @@ public class ClientEntity extends SerializableSerializer {
 	@Column(nullable=false, length=400, unique=false)
 	private String passwordEncrypted;
 	
-//	public Long getId() {
-//		return id;
-//	}
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
-//	public String getFirstName() {
-//		return firstName;
-//	}
-//	public void setFirstName(String firstName) {
-//		this.firstName = firstName;
-//	}
-//	public String getLastName() {
-//		return lastName;
-//	}
-//	public void setLastName(String lastName) {
-//		this.lastName = lastName;
-//	}
-//	public String getAddress() {
-//		return address;
-//	}
-//	public void setAddress(String address) {
-//		this.address = address;
-//	}
-//	public String getPasswordEncrypted() {
-//		return passwordEncrypted;
-//	}
-//	public void setPasswordEncrypted(String passwordEncrypted) {
-//		this.passwordEncrypted = passwordEncrypted;
-//	}
-	
+	@Column(nullable=false, length=400, unique=true)
+	private String email;
 }
