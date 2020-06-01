@@ -37,6 +37,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	
 	private AuthenticationFilter getAuthenticationFilter() throws Exception {
 		AuthenticationFilter authenticationFilter = new AuthenticationFilter(iClientService, env, authenticationManager());
+		authenticationFilter.setFilterProcessesUrl(env.getProperty("user_login.paht"));
 		return authenticationFilter;
 	}
 	

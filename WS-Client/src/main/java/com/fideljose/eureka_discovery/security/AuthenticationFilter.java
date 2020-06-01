@@ -67,7 +67,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 		ClientDto clientDto = iClientService.getUserDetailsByEmail(userName);
 		
 		final Calendar calendar = Calendar.getInstance();
-	    calendar.add(Calendar.MINUTE, 123);
+	    calendar.add(Calendar.MINUTE, Integer.parseInt(env.getProperty("token.expiration_time")));
 		String token = Jwts.builder()
 	            			.setSubject(clientDto.getId().toString())
 	            			.setExpiration(calendar.getTime())
