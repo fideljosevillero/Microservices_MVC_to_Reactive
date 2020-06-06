@@ -40,13 +40,6 @@ public class ClientController {
 		ClientDto cdto = iclientService.save(clientDto);
 		return new ResponseEntity<ClientDto>(cdto, HttpStatus.CREATED);
 	}
-	
-//	@PostMapping("/login")
-//	public ResponseEntity<ClientDto> login(@RequestBody LoginUserDto loginUserDto) {
-//		UserDetails cdto = iclientService.loadUserByUsername(loginUserDto.getEmail());
-//		
-//		return new ResponseEntity<ClientDto>(new ClientDto(), HttpStatus.CREATED);
-//	}
 
 	
 }
