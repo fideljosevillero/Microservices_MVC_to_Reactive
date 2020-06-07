@@ -29,6 +29,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 //    	.antMatchers(HttpMethod.POST, "/**").permitAll()
     	.antMatchers(HttpMethod.POST, environment.getProperty("api.registration.url.path")).permitAll()
     	.antMatchers(HttpMethod.POST, environment.getProperty("api.login.url.path")).permitAll()
+    	.antMatchers(HttpMethod.POST, environment.getProperty("api.spring-cloud.configuration")).permitAll()
+    	.antMatchers(HttpMethod.GET, environment.getProperty("api.spring-cloud.configuration")).permitAll()
 //    	.antMatchers(HttpMethod.GET, "/ws-client/client/status/check").permitAll()
     	.anyRequest().authenticated()
     	.and()
