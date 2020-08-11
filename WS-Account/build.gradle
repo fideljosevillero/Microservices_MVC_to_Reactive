@@ -32,6 +32,10 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	
+	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bus-amqp
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-amqp' //, version: '2.2.2.RELEASE'
+	
 }
 
 dependencyManagement {

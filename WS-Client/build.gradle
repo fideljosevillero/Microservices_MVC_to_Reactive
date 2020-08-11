@@ -37,18 +37,16 @@ dependencies {
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
 	compile group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '2.3.7'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
-	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
 	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
-	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config
 	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '2.2.3.RELEASE'
-	
-	
 	
 	//Lombok
 	compileOnly 'org.projectlombok:lombok:1.18.12'
 	annotationProcessor 'org.projectlombok:lombok:1.18.12'	
 	testCompileOnly 'org.projectlombok:lombok:1.18.12'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'	
+	
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-amqp' //, version: '2.2.2.RELEASE'
 }
 
 dependencyManagement {

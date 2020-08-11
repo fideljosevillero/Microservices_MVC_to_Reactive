@@ -19,6 +19,7 @@ import com.fideljose.eureka_discovery.service.IClientService;
 
 //http://192.168.1.7:50811/client/status/check
 //http://laptop-co51gmud:[PORT-ZULLGATEWAY]/ws-client/client/status/check
+//https://github.com/simplyi/SpringCloudVideoCourse/tree/master/PhotoAppApiZuulAPIGateway/src/main
 @RestController
 @RequestMapping("/client")
 public class ClientController {
@@ -32,7 +33,9 @@ public class ClientController {
 	@GetMapping("/status/check")
 	public String index() {
 		return "Client Up, services Working!!! on port number:" 
-				+ env.getProperty("local.server.port");
+				+ env.getProperty("local.server.port")
+				+ " TOKEN EXPIRATIONS "
+				+ env.getProperty("token.expiration_time");
 	}
 	
 	@PostMapping("/save-client")

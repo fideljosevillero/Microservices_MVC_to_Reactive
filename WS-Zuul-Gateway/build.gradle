@@ -38,6 +38,7 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.3.0.RELEASE'
 	
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-amqp' //, version: '2.2.2.RELEASE'
 	
 }
 
